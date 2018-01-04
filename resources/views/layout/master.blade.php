@@ -71,7 +71,7 @@
 
     <div class="jumbotron">
       <h1>       Message Filtering  </h1>      
-      <p>       ระบบคัดกรองข้อความที่ก่อให้เกิดความขัดแย้งในสังคม</p>   
+      <p>       ระบบคัดกรองข้อความ Cyber Bullying</p>   
     </div>
     <div class='content'>
       @yield('content') 
