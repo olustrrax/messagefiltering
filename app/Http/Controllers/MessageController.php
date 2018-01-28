@@ -10,10 +10,14 @@ use \App\Messages;
 class MessageController extends Controller
 {
     
-	public function firstpage(){
+	public function index(){
 		$data = Messages::all();
-		// DD($data->all());
+		//DD($data->all());
 		return view("/home",['data'=>$data]);
 	}
 
+
+	public function getData(){
+
+	}
 }

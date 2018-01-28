@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('/home');
+    return redirect('home');
 });
 
-Route::get("home","MessageController@firstpage");
+Route::get("/home","MessageController@index");
