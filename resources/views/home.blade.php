@@ -1,35 +1,54 @@
 @extends('layout.master')
 
 @section('content')
-
 <div class="container">
 	<table class="table table-bordered table-inverse">
 		  <thead>
 		    <tr>
 		      <th>#</th>
-		      {{--  <th>ID</th>  --}}
+					<th>Prediction</th>
 		      <th>Username</th>
 		      <th>Text</th>
 					<th>Time</th>
-					<th>Prediction</th>
 		    </tr>
 		  </thead>
 		  <tbody>
-		    @foreach($data as $data)
-		    <tr>
-		      <td>{{$data->message_id}}</td>
-		      {{--  <td>{{$data->id}}</td>  --}}
-		      <td>{{$data->username}}</td>
-		      <td>{{$data->text}}</td>
-					<td>{{$data->time_tweet}}</td>
-					<td></td>
-		    </tr>
+				@foreach($data as $d)
+					@if($d->prediction == "negative")
+					<tr class="danger">
+					@else
+					<tr class="success">	
+					@endif
+						<td>{{$d->message_id}}</td>
+						<td><b>
+								@if($d->prediction == "negative")
+									<span style="color:darkred">{{$d->prediction}}</span>
+								@else
+									<span style="color:seagreen">{{$d->prediction}}</span>						
+								@endif
+							</b>
+						</td>
+						<td>{{$d->screen_name}}</td>
+						<td>{{$d->text}}</td>
+						<td>{{$d->time_tweet}}</td>
+						
+					</tr>
 		  	@endforeach   
 		  </tbody>
-
-		
-
 	</table>  
+
+	<div class="panel-heading" style="display:flex; justify-content:center;align-items:center;">
+		{{ $data->links() }}
+	</div>
 </div>
+
+<style>
+	.container {
+		padding-left: 70px;
+		padding-right: 70px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+</style>
 
 @endsection

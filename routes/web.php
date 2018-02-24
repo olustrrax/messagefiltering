@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get("/home","MessageController@index");
+
+
+Route::get("/statics","StaticsController@index");

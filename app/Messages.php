@@ -8,6 +8,6 @@ class Messages extends Model
 {
 	protected $table = 'tweet';
     protected $fillable = [
-       'message_id', 'username', 'id', 'text', 'time_tweet'
+       'message_id', 'screen_name', 'id', 'text', 'time_tweet','prediction'
     ];
 }

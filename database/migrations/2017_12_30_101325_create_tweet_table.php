@@ -16,10 +16,11 @@ class CreateTweetTable extends Migration
         Schema::create('tweet', function (Blueprint $table) {
             $table->increments('message_id');
             $table->string('id');
-            $table->string('username');
+            $table->string('screen_name');
             $table->string('text');
             $table->string('time_tweet');
-            $table->timestamps();
+            $table->string('prediction');
+            $table->timestamp('created_at')->nullable();
         });
     }
 
