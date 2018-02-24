@@ -10,9 +10,6 @@
   <link rel="icon" type="image/ico" href="/assets/img/icon1.png"/>
   <link rel="stylesheet" href="{{ asset('css/master.css') }}">
   <meta http-equiv="refresh" content="3;url=http://localhost:8080/home" />
-  <script type="text/javascript" src="{{ URL::asset('js/MDB/js/mdb.min.js') }}"></script>
-  <script type="text/javascript" src="{{ URL::asset('js/chart.js') }}"></script>
-  <link rel="stylesheet" href="{{ asset('css/mdb.min.css') }}">
 </head>
 
 
