@@ -9,7 +9,7 @@
   <title>Messages Filtering</title> 
   <link rel="icon" type="image/ico" href="/assets/img/icon1.png"/>
   <link rel="stylesheet" href="{{ asset('css/master.css') }}">
-  <meta http-equiv="refresh" content="3;url=http://localhost:8000/totalmessages" />
+  <meta http-equiv="refresh" content="3;url=http://localhost:8000/bullymessages" />
 </head>
 
 
@@ -27,7 +27,6 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/bullymessages">ข้อความ Bully</a></li>
-          {{--  <form action="/delete"></form>  --}}
           <li><a href="/totalmessages">ข้อความทั้งหมด</a></li>
           <li><a href="/delete">ลบข้อความทั้งหมด</a></li>
         </ul>
@@ -49,17 +48,13 @@
 
         <div class="col-lg-6 col-md-6">
             
-          <h3><i>Chart</i></h3> 
+          {{--  <h3><i>Chart</i></h3>   --}}
           @php
-            $namePos = "width: ".$avgPos."%";
+            $dif = $total - $Negative;
+            $avgNeg = ($Negative/$total)*100;
             $nameNeg = "width: ".$avgNeg."%";
           @endphp
-          <label style="color:yellowgreen">POSITIVE: ข้อความปกติ</label>
-          <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{$avgPos}}" aria-valuemin="0" aria-valuemax="90" style="{{$namePos}}">
-                {{$Positive}} ข้อความ
-            </div>
-          </div>
+          
           <label style="color:salmon">NEGATIVE: ข้อความ Bully</label>
           <div class="progress">
             <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{$avgNeg}}" aria-valuemin="0" aria-valuemax="90" style="{{$nameNeg}}">
@@ -82,13 +77,9 @@
           @yield('content') 
         </div>
       </div>
-      {{--  <div class="col-lg-5"></div>  --}}
     </div>
   </div>
   
-  
-  <canvas id="barChart"></canvas>
-
 
 </body>
 </html>

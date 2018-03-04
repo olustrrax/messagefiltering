@@ -16,15 +16,17 @@
 				@foreach($data as $d)
 					@if($d->prediction == "negative")
 					<tr class="danger">
-					@else
+					@elseif($d->prediction == "positive")
 					<tr class="success">	
 					@endif
 						<td>{{$d->message_id}}</td>
 						<td><b>
 								@if($d->prediction == "negative")
 									<span style="color:darkred">{{$d->prediction}}</span>
-								@else
-									<span style="color:seagreen">{{$d->prediction}}</span>						
+								@elseif($d->prediction == "positive")
+									<span style="color:seagreen">{{$d->prediction}}</span>
+								@else						
+									<span>problem with classify</span>
 								@endif
 							</b>
 						</td>

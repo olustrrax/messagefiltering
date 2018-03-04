@@ -12,10 +12,12 @@
 */
 
 Route::get('/', function () {
-    return redirect('home');
+    return redirect('bullymessages');
 });
 
-Route::get("/home","MessageController@index");
 
+Route::get("/bullymessages","MessageController@index");
 
-Route::get("/statics","StaticsController@index");
+Route::get("/delete","MessageController@delete");
+
+Route::get("/totalmessages","MessageController@totalMessages");
